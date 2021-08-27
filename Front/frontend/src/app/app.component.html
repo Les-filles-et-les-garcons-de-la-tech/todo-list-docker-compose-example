@@ -1,0 +1,22 @@
+<div class="container pt-3">
+
+  <div class="input-group mb-3">
+    <input [(ngModel)]="todoName" type="text" class="form-control" placeholder="Add a Todo">
+    <div class="input-group-append">
+      <button class="btn btn-success" type="button" (click)="onClickTodoAdd()" style="border-top-left-radius: 0pt;border-bottom-left-radius: 0pt;border-top-right-radius: 0.25em;border-bottom-right-radius: 0.25em;">+</button>  
+    </div>
+  </div>
+    
+  <ul class="list-group w-75 mx-auto" >
+    <li class="list-group-item d-flex justify-content-between" *ngFor="let todo of todos">
+      {{todo.name}}
+      <button type="button" class="btn btn-outline-danger" (click)="onClickTodoDelete(todo.id)">
+        <i class="bi bi-trash-fill"></i>
+      </button>
+      
+    </li>
+  </ul>
+</div>
+ 
+
+<router-outlet></router-outlet>

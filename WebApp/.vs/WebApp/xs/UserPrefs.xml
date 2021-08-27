@@ -1,0 +1,38 @@
+﻿<Properties StartupConfiguration="{36B1AE5F-0C98-4BAE-9188-ABE71451BD63}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WebApp/Controllers/TodoController.cs">
+    <Files>
+      <File FileName="WebApp/Controllers/WeatherForecastController.cs" Line="1" Column="1" />
+      <File FileName="WebApp/appsettings.json" />
+      <File FileName="WebApp/Startup.cs" />
+      <File FileName="WebApp/Services/ToDoService.cs" />
+      <File FileName="WebApp/Controllers/TodoController.cs" Line="7" Column="2" />
+      <File FileName="WebApp/Program.cs" />
+      <File FileName="WebApp/WeatherForecast.cs" />
+      <File FileName="WebApp/appsettings.Development.json" />
+      <File FileName="WebApp/Models/TodoItem.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="WebApp" expanded="True">
+            <Node name="WebApp" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="TodoController.cs" selected="True" />
+              </Node>
+              <Node name="Models" expanded="True" />
+              <Node name="Services" expanded="True" />
+              <Node name="appsettings.json" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.WebApp PreferredExecutionTarget="/Applications/Brave Browser.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "EsYguzrNo32QZm0vbbr6NRpSBdempqejUY2yBvKmeHMf9OvkSfn9yXHFOqMJBaBLkUsPWeDSi0oCtAjN8CJoMA==",
+  "dgSpecHash": "XoNxFS8x5oZHjp28Oh1gAnQZ47q3qY4dlpSLUBrHPl7pE4kcCv2JAMulOYRSuu7mlI6S231HM9zTGV7GErz0RA==",
   "success": true,
-  "projectFilePath": "/Users/yannisbourree/Documents/richardsonDocker/WebApp/WebApp/WebApp.csproj",
+  "projectFilePath": "/Users/yannisbourree/Documents/todoListComposeExample/WebApp/WebApp/WebApp.csproj",
   "expectedPackageFiles": [
     "/Users/yannisbourree/.nuget/packages/dnsclient/1.4.0/dnsclient.1.4.0.nupkg.sha512",
     "/Users/yannisbourree/.nuget/packages/microsoft.netcore.platforms/2.1.2/microsoft.netcore.platforms.2.1.2.nupkg.sha512",

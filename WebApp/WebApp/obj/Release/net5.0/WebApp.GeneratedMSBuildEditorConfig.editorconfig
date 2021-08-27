@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = WebApp
-build_property.ProjectDir = /Users/yannisbourree/Documents/richardsonDocker/WebApp/WebApp/
+build_property.ProjectDir = /Users/yannisbourree/Documents/todoListComposeExample/WebApp/WebApp/

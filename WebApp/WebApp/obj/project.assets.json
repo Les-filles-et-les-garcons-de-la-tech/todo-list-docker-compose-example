@@ -454,14 +454,14 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/yannisbourree/Documents/richardsonDocker/WebApp/WebApp/WebApp.csproj",
+      "projectUniqueName": "/Users/yannisbourree/Documents/todoListComposeExample/WebApp/WebApp/WebApp.csproj",
       "projectName": "WebApp",
-      "projectPath": "/Users/yannisbourree/Documents/richardsonDocker/WebApp/WebApp/WebApp.csproj",
+      "projectPath": "/Users/yannisbourree/Documents/todoListComposeExample/WebApp/WebApp/WebApp.csproj",
       "packagesPath": "/Users/yannisbourree/.nuget/packages/",
-      "outputPath": "/Users/yannisbourree/Documents/richardsonDocker/WebApp/WebApp/obj/",
+      "outputPath": "/Users/yannisbourree/Documents/todoListComposeExample/WebApp/WebApp/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/yannisbourree/.config/NuGet/NuGet.Config"
+        "/Users/yannisbourree/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"

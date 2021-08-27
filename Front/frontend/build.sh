@@ -1,5 +1,3 @@
-docker compose down && \
+npm install
 npm run build && \
-docker build -t frontend .. && \
-docker image prune -f && \
-docker compose up -d;
+docker build -t frontend ..

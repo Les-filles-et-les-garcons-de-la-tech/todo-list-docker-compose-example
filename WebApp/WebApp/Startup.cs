@@ -48,6 +48,8 @@ namespace WebApp
 
             services.AddSingleton<TodoService>();
 
+            services.AddSingleton<ColorService>();
+
             services.AddControllers();
         }
 
@@ -58,6 +60,11 @@ namespace WebApp
             {
                 app.UseDeveloperExceptionPage();
             }
+            Console.WriteLine("-------------uu----------------");
+            Console.WriteLine(Environment.GetEnvironmentVariable("BACKGROUND_COLOR"));
+            Console.WriteLine("-------------uu----------------");
+            Environment.SetEnvironmentVariable("Test1", "Value1");
+            Console.WriteLine(Environment.GetEnvironmentVariable("Test1"));
 
             app.UseHttpsRedirection();
 

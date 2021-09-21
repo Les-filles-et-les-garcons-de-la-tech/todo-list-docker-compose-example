@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ColorService } from './color.service';
 import { Todo } from './models/app.models.todo';
 import { TodoService } from './todo.service';
 @Component({
@@ -9,17 +10,27 @@ import { TodoService } from './todo.service';
 export class AppComponent {
   public todos: Todo[] = [];
   todoName: string = "";
-  constructor(private todoService: TodoService ) { }
+  color: string = "#EEEEEE";
+  constructor(private todoService: TodoService, private colorService: ColorService ) { }
 
   ngOnInit() {
     this.todoService.todosSubject.subscribe(todos => {
       this.todos = todos
     })
+    this.colorService.colorSubject.subscribe(color => {
+      window.document.body.style.backgroundColor = color;
+
+    })
     this.loadAllTodoList();
+    this.getColor();
   }
 
   loadAllTodoList() {
     this.todoService.getAllTodos();
+  }
+
+  getColor() {
+    this.colorService.getColor();
   }
   
   onClickTodoDelete(id="d") {

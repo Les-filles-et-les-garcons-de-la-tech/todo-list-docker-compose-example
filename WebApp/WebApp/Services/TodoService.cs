@@ -2,6 +2,7 @@
 using MongoDB.Driver;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace WebApp.Services
 {
@@ -11,7 +12,27 @@ namespace WebApp.Services
 
         public TodoService(ITodolistDatabaseSettings settings)
         {
-            var client = new MongoClient(settings.ConnectionString);
+            MongoClient client;
+            if(Environment.GetEnvironmentVariable("DB_ADDRESS") != null && 
+                Environment.GetEnvironmentVariable("DB_PORT") != null && 
+                Environment.GetEnvironmentVariable("DB_USERNAME") != null && 
+                Environment.GetEnvironmentVariable("DB_PASSWORD") != null)
+            {
+                client = new MongoClient("mongodb://"+
+                                Environment.GetEnvironmentVariable("DB_USERNAME") +
+                                ":" +
+                                Environment.GetEnvironmentVariable("DB_PASSWORD") +
+                                "@" + 
+                                Environment.GetEnvironmentVariable("DB_ADDRESS") + 
+                                ":" +
+                                Environment.GetEnvironmentVariable("DB_PORT") +
+                                "/");
+            }
+            else
+            {
+                client = new MongoClient("mongodb://root:example@mongo:27017/");
+            }
+            
             var database = client.GetDatabase(settings.DatabaseName);
 
             _todoItems = database.GetCollection<TodoItem>(settings.TodoCollectionName);

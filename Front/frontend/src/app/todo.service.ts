@@ -2,17 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 import { Todo } from './models/app.models.todo';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodoService {
   constructor(private http: HttpClient) { }
-  private URL : string = "http://localhost:80/api/todo"
+  private URL : string = environment.apiUrl+"/api/todo"
   public todosSubject : Subject<Todo[]> = new Subject();
   
   getAllTodos(): void {
-
+    console.log(environment.apiUrl);
     this.http.get<Todo[]>(this.URL).subscribe(data => {
       var todos : Todo[] = [];
       data.forEach(todo => {

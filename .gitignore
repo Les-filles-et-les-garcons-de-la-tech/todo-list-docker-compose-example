@@ -9,7 +9,7 @@ node_modules/
 ### Angular ###
 ## Angular ##
 # compiled output
-dist/
+Front/frontend/dist/
 tmp/
 app/**/*.js
 app/**/*.js.map

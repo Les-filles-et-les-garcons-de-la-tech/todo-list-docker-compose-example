@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: window["env"]["backUrl"] || "http://localhost:80"
+  apiUrl: (window as { [key: string]: any })["env"]["backUrl"] as string || "http://localhost:80"
 };
 /*
  * For easier debugging in development mode, you can import the following file

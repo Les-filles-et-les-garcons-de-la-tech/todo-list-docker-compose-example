@@ -1,3 +1,5 @@
+.vscode/
+
 WebApp/published/
 WebApp/.vs/
 node_modules/

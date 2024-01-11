@@ -1,10 +1,17 @@
-# Contenu
+# Démo d'exemple
 
-Projet qui porte :
-- L'application frontend en angular
-- L'application backend en Dotnet
+## Architecture
+Application TODO List en 3 tiers:  
 
-Les 2 ont un fichier Dockerfile et un script pour builder l'image.  
+
+![architecture](images/architecture-demo.png)
+
+## Contenu
+Projet qui porte:
+- Une application frontend en angular
+- Une application backend en Dotnet
+
+Chaque projet porte un fichier Dockerfile et un script pour builder l'image.  
 
 Un fichier docker-compose.yaml vide est présent pour l'exercice de la formation Docker.  
 

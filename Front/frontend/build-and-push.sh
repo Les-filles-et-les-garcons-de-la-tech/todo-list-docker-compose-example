@@ -3,13 +3,14 @@
 #####################
 # Version Classique #
 #####################
-REPOSITORY=fgtech
-IMAGE=
-TAG=1.0
+# REPOSITORY=fgtech
+IMAGE=frontend
+# TAG=2024.12
 npm install
 npm run build && \
-docker build -t "$REPOSITORY"/"$IMAGE":"$TAG" ../
-docker push "$REPOSITORY"/"$IMAGE":"$TAG"
+# docker build -t "$REPOSITORY"/"$IMAGE":"$TAG" ../
+docker build -t $IMAGE ../
+# docker push "$REPOSITORY"/"$IMAGE":"$TAG"
 
 ##########################
 # Version dynamique avec #

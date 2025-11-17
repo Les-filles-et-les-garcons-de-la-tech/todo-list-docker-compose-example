@@ -1,0 +1,138 @@
+.app-wrapper {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 24px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.85);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.controls input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.controls button {
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background-color: #007bff;
+  color: #fff;
+}
+
+.controls button:hover {
+  opacity: 0.9;
+}
+
+.info {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+.error {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #b00020;
+}
+
+/* Liste de cartes */
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* plus d'espace entre les cartes */
+}
+
+/* Carte de base */
+.todo-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: grab;
+  transition:
+    transform 150ms ease,
+    box-shadow 150ms ease,
+    background-color 150ms ease;
+}
+
+.todo-card:active {
+  cursor: grabbing;
+}
+
+.todo-main {
+  display: flex;
+  flex-direction: column;
+}
+
+.todo-text {
+  font-size: 16px;
+}
+
+/* Bouton delete */
+.delete-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 6px 12px;
+  background-color: #dc3545;
+  color: #fff;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  opacity: 0.9;
+}
+
+/* Animations CDK pour un déplacement fluide */
+.cdk-drag-animating {
+  transition: transform 150ms ease;
+}
+
+.todo-list.cdk-drop-list-dragging .todo-card:not(.cdk-drag-placeholder) {
+  transition: transform 150ms ease;
+}
+
+/* Preview généré par CDK : carte entière, léger effet seulement */
+.cdk-drag-preview {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  transform: scale(1.01);
+  width: 100%;
+}
+
+/* Placeholder généré par CDK :
+   - même taille que la carte
+   - invisible mais garde la place, donc la hauteur du conteneur ne change pas */
+.cdk-drag-placeholder {
+  opacity: 0;
+}

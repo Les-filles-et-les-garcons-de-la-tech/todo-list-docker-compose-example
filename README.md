@@ -9,7 +9,7 @@ Application TODO List en 3 tiers:
 ## Contenu
 Projet qui porte:
 - Une application frontend en angular
-- Une application backend en Dotnet
+- Une application backend en Golang
 
 Chaque projet porte un fichier Dockerfile et un script pour builder l'image.  
 

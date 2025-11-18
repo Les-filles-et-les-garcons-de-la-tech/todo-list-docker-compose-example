@@ -12,10 +12,9 @@ services:
       # Base créée par défaut (même nom que dans appsettings.json: "webapp")
       - MONGO_INITDB_DATABASE=webapp
     ports:
-      # Expose Mongo en local (optionnel, mais pratique pour debug avec Compass, etc.)
       - "27017:27017"
     volumes:
-      - mongo-data:/data/db
+      - db-volume:/data/db
   
   mongo-express:
     image: mongo-express:1.0.2
@@ -34,21 +33,17 @@ services:
     image: todo-backend:latest
     container_name: webapp-go
     environment:
-      # Port d'écoute du serveur Go (main.go utilise PORT sinon 5000 par défaut)
-      - PORT=81
+      # # Variables de connexion Mongo si changées.
+      # - DB_ADDRESS=mongo
+      # - DB_PORT=27017
+      # - DB_USERNAME=root
+      # - DB_PASSWORD=example
 
-      # Variables de connexion Mongo, identiques à la logique de ton TodoService C#
-      - DB_ADDRESS=mongo
-      - DB_PORT=27017
-      - DB_USERNAME=root
-      - DB_PASSWORD=example
-
-      # Pour le ColorService (équivalent BACKGROUND_COLOR)
+      # # Pour le ColorService (équivalent BACKGROUND_COLOR)
       - BACKGROUND_COLOR=#FFCC00
     depends_on:
       - mongo
     ports:
-      # Accès à l'API Go depuis ta machine
       - "81:81"
 
   front:
@@ -60,4 +55,4 @@ services:
       - "80:80"
 
 volumes:
-  mongo-data:
+  db-volume:

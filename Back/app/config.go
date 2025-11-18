@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -10,16 +11,17 @@ type appSettings struct {
 	TodolistDatabaseSettings TodolistDatabaseSettings `json:"TodolistDatabaseSettings"`
 }
 
-// LoadTodolistSettings lit appsettings.json et retourne les paramètres pour la TodoList.
 func LoadTodolistSettings(path string) (*TodolistDatabaseSettings, error) {
-	f, err := os.Open(path)
+	data, err := os.ReadFile(path)
 	if err != nil {
 		return nil, err
 	}
-	defer f.Close()
+
+	// Remove UTF-8 BOM if present
+	data = bytes.TrimPrefix(data, []byte("\xef\xbb\xbf"))
 
 	var cfg appSettings
-	if err := json.NewDecoder(f).Decode(&cfg); err != nil {
+	if err := json.Unmarshal(data, &cfg); err != nil {
 		return nil, fmt.Errorf("decode %s: %w", path, err)
 	}
 

@@ -1,37 +1,21 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-#####################
-# Version Classique #
-#####################
-# REPOSITORY=fgtech
-IMAGE=frontend
-# TAG=2024.12
-npm install
-npm run build && \
-# docker build -t "$REPOSITORY"/"$IMAGE":"$TAG" ../
-docker build -t $IMAGE ../
-# docker push "$REPOSITORY"/"$IMAGE":"$TAG"
+# Nom et tag de l'image (paramètres optionnels)
+IMAGE_NAME="${1:-todo-frontend}"
+IMAGE_TAG="${2:-latest}"
 
-##########################
-# Version dynamique avec #
-# base-href par étudiant #
-##########################
-# npm install
+echo "Building Angular frontend Docker image: ${IMAGE_NAME}:${IMAGE_TAG}"
+echo "Build context: $(pwd)"
 
-# for i in {1..9}; do
-#     TAG=stu0$i
-#     npm run build -- --base-href /"$TAG"/ && \
-#     docker build -t "$REPOSITORY"/"$IMAGE":"$TAG" ../
+docker build \
+  -t "${IMAGE_NAME}:${IMAGE_TAG}" \
+  .
 
-#     docker push "$REPOSITORY"/"$IMAGE":"$TAG"
- 
-# done
+# # Si tu veux pousser automatiquement sur un registre (optionnel)
+# if [[ "${3:-}" == "push" ]]; then
+#   echo "Pushing image ${IMAGE_NAME}:${IMAGE_TAG}"
+#   docker push "${IMAGE_NAME}:${IMAGE_TAG}"
+# fi
 
-# for i in {10..15}; do
-#     TAG=stu$i
-#     npm run build -- --base-href /"$TAG"/ && \
-#     docker build -t "$REPOSITORY"/"$IMAGE":"$TAG" ../
-
-#     docker push "$REPOSITORY"/"$IMAGE":"$TAG"
- 
-# done
+echo "Build finished: ${IMAGE_NAME}:${IMAGE_TAG}"

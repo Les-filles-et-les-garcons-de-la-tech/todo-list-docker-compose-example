@@ -5,7 +5,7 @@ set -euo pipefail
 IMAGE_NAME="${1:-todo-backend}"
 IMAGE_TAG="${2:-latest}"
 
-echo "Building Angular backend Docker image: ${IMAGE_NAME}:${IMAGE_TAG}"
+echo "Building Golang backend Docker image: ${IMAGE_NAME}:${IMAGE_TAG}"
 echo "Build context: $(pwd)"
 
 docker build \

@@ -1,4 +1,4 @@
-FROM golang:1.25.4-alpine
+FROM docker.io/library/golang:1.25.4-alpine
 
 WORKDIR /app
 

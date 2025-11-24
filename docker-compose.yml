@@ -7,10 +7,10 @@ services:
     restart: always
     environment:
       # Utilisateur root de Mongo
-      - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=example
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: example
       # Base créée par défaut (même nom que dans appsettings.json: "webapp")
-      - MONGO_INITDB_DATABASE=webapp
+      MONGO_INITDB_DATABASE: webapp
     ports:
       - "27017:27017"
     volumes:
@@ -23,9 +23,9 @@ services:
     ports:
       - 8081:8081
     environment:
-      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINUSERNAME: admin
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://root:example@mongo:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://admin:example@mongo:27017/
       ME_CONFIG_BASICAUTH: "false"
 
 

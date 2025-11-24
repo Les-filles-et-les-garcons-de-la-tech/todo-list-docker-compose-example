@@ -1,5 +1,5 @@
 # Stage 1 : build Angular app
-FROM node:22-alpine AS build
+FROM docker.io/library/node:22-alpine AS build
 
 WORKDIR /app
 

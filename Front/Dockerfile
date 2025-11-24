@@ -1,5 +1,5 @@
 # Stage 1 : build Angular app
-FROM docker.io/library/node:22-alpine AS build
+FROM docker.io/library/node:22-alpine3.22 AS build
 
 WORKDIR /app
 
@@ -16,7 +16,7 @@ COPY frontend/. .
 RUN npm run build -- --configuration production
 
 # Stage 2 : Nginx to serve the static files
-FROM nginx:1.27-alpine
+FROM docker.io/library/nginx:1.27-alpine
 
 # Copy Angular built files (Angular 17+ outputs into dist/<name>/browser)
 COPY --from=build /app/dist/*/browser /usr/share/nginx/html

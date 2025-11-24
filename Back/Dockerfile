@@ -11,7 +11,7 @@ COPY app/*.go ./
 # Build binaire
 RUN go build -o webapp .
 
-ENV PORT=81
-EXPOSE 81
+ENV PORT=82
+EXPOSE 82
 
 CMD ["./webapp"]

@@ -54,7 +54,7 @@ func main() {
 	// CORS global "allow all" comme dans Startup.cs
 	handler := withCORS(mux)
 
-	addr := ":81"
+	addr := ":2"
 	if port := os.Getenv("PORT"); port != "" {
 		addr = ":" + port
 	}

@@ -7,7 +7,7 @@ WORKDIR /app
 COPY frontend/package*.json ./
 
 # Install deps
-RUN npm ci
+RUN npm install
 
 # Copy the rest of the Angular project
 COPY frontend/. .
@@ -16,7 +16,7 @@ COPY frontend/. .
 RUN npm run build -- --configuration production
 
 # Stage 2 : Nginx to serve the static files
-FROM docker.io/library/nginx:1.27-alpine
+FROM docker.io/library/nginx:1.29-alpine3.22
 
 # Copy Angular built files (Angular 17+ outputs into dist/<name>/browser)
 COPY --from=build /app/dist/*/browser /usr/share/nginx/html

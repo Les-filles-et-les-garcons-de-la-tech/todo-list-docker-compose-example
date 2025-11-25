@@ -25,13 +25,16 @@ services:
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
       ME_CONFIG_MONGODB_URL: mongodb://admin:example@mongo:27017/
       ME_CONFIG_BASICAUTH: "false"
-
+    depends_on:
+      - mongo      
 
   api:
     image: backend-todolist:1.0
     container_name: webapp-go
+    ports:
+      - "8082:82"
     environment:
-      # Variables de connexion Mongo si changées.
+      # Variables de connexion mongo si changées.
       DB_ADDRESS: mongo
       DB_PORT: 27017
       DB_USERNAME: admin
@@ -40,16 +43,14 @@ services:
       BACKGROUND_COLOR: #4287f5
     depends_on:
       - mongo
-    ports:
-      - "8082:82"
 
   front:
     image: frontend-todolist:1.0
     container_name: webapp-angular
-    depends_on:
-      - api
     ports:
       - "8080:80"
+    depends_on:
+      - api
 
 volumes:
   db-volume:

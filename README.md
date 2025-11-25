@@ -1,5 +1,7 @@
 # Démo d'exemple
 
+Il est en lien avec les formations sur les **Container Engines (Docker / Podman)** présentes sur le Drive.  
+
 ## Architecture
 Application TODO List en 3 tiers:  
 

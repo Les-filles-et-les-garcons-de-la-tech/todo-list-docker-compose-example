@@ -32,14 +32,12 @@ services:
     container_name: webapp-go
     environment:
       # Variables de connexion Mongo si changées.
-      - DB_ADDRESS=mongo
-      - DB_PORT=27017
-      - DB_USERNAME=admin
-      - DB_PASSWORD=example
+      DB_ADDRESS: mongo
+      DB_PORT: 27017
+      DB_USERNAME: admin
+      DB_PASSWORD: example
 
-      # # Pour le ColorService (équivalent BACKGROUND_COLOR)
-      # Pour le ColorService (équivalent BACKGROUND_COLOR)
-      - BACKGROUND_COLOR=#4287f5
+      BACKGROUND_COLOR: #4287f5
     depends_on:
       - mongo
     ports:

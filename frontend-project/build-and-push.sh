@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nom et tag de l'image (paramètres optionnels)
-IMAGE_NAME="${1:-todo-frontend}"
+IMAGE_NAME="${1:-frontend-todolist}"
 IMAGE_TAG="${2:-latest}"
 
 echo "Building Angular frontend Docker image: ${IMAGE_NAME}:${IMAGE_TAG}"

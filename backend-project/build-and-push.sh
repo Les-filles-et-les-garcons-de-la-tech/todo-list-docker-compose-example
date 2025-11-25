@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Nom et tag de l'image (paramètres optionnels)
-IMAGE_NAME="${1:-todo-backend}"
+IMAGE_NAME="${1:-backend-todolist}"
 IMAGE_TAG="${2:-latest}"
 
 echo "Building Golang backend Docker image: ${IMAGE_NAME}:${IMAGE_TAG}"

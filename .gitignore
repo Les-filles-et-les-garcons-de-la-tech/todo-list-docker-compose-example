@@ -4,6 +4,7 @@ WebApp/published/
 WebApp/.vs/
 node_modules/
 
+docker-compose-solution.yml
 
 # Created by https://www.toptal.com/developers/gitignore/api/visualstudio,visualstudiocode,dotnetcore,angular
 # Edit at https://www.toptal.com/developers/gitignore?templates=visualstudio,visualstudiocode,dotnetcore,angular
